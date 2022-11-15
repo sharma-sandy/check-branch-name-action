@@ -1,9 +1,9 @@
 name: 'Check branch name'
 description: 'Check if the branch name is proper'
 
-inputs:
-  branch-name:
-    description: 'Branch name'
+# inputs:
+#   branch-name:
+#     description: 'Branch name'
 outputs:
   message: # id of output
     description: 'The message to display'
