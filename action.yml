@@ -1,9 +1,11 @@
 name: 'Check branch name'
 description: 'Check if the branch name is proper'
 
-# inputs:
-#   branch-name:
-#     description: 'Branch name'
+inputs:
+  token:
+    description: 'github token'
+    default: ${{ github.token }}
+
 outputs:
   message: # id of output
     description: 'The message to display'
