@@ -4,7 +4,6 @@ description: 'Check if the branch name is proper'
 inputs:
   branch-name:
     description: 'Branch name'
-    default: $GITHUB_REF_NAME
 outputs:
   message: # id of output
     description: 'The message to display'
