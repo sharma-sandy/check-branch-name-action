@@ -1,8 +1,13 @@
 name: 'Check branch name'
 description: 'Check if the branch name is proper'
 
+inputs:
+  branch-name:
+    description: 'Branch name'
+    default: $GITHUB_REF_NAME
+outputs:
+  message: # id of output
+    description: 'The message to display'
 runs:
-  using: "composite"
-  steps:
-    - run: echo Checking branch name validity $GITHUB_REF_NAME
-      shell: bash
+  using: 'node16'
+  main: 'index.js'
