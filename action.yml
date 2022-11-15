@@ -1,0 +1,8 @@
+name: 'Check branch name'
+description: 'Check if the branch name is proper'
+
+runs:
+  using: "composite"
+  steps:
+    - run: echo Checking branch name validity $GITHUB_REF
+      shell: bash
