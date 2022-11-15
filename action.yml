@@ -4,7 +4,7 @@ description: 'Check if the branch name is proper'
 inputs:
   token:
     description: 'github token'
-    default: ${{ github.token }}
+    default: ${{ secrets.GITHUB_TOKEN }}
 
 outputs:
   message: # id of output
