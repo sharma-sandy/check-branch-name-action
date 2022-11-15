@@ -7,7 +7,7 @@ try {
   const prBody = payload.pull_request.body;
   const prTitle = payload.pull_request.title;
   const github_token = core.getInput("token");
-  const octokit = new github.GitHub(github_token);
+  const octokit = github.getOctokit(github_token);
   if (prTitle === null) {
     octokit.issues.createComment({
       ...github.context.repo,
