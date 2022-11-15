@@ -9,7 +9,7 @@ try {
   const github_token = core.getInput("token");
   const octokit = github.getOctokit(github_token);
   if (prTitle === null) {
-    octokit.issues.createComment({
+    octokit.rest.issues.createComment({
       ...github.context.repo,
       issue_number: prNumber,
       body: "PR title is missing",
@@ -17,7 +17,7 @@ try {
     core.setFailed("PR title is not provided");
   }
   if (prBody === null) {
-    octokit.issues.createComment({
+    octokit.rest.issues.createComment({
       ...github.context.repo,
       issue_number: prNumber,
       body: "PR title is missing",
