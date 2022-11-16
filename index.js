@@ -38,17 +38,18 @@ try {
       issue_number: prNumber,
       body: "PR Description is missing",
     });
-    octokit.rest.pulls.createReviewComment({
-      ...github.context.repo,
-      pull_number: prNumber,
-      body: "Some comment",
-      commit_id: github.context.sha,
-      path: "README.md",
-      line: 2,
-    });
+
     core.setFailed("PR Description is not provided");
   }
 
+  octokit.rest.pulls.createReviewComment({
+    ...github.context.repo,
+    pull_number: prNumber,
+    body: "Some comment",
+    commit_id: github.context.sha,
+    path: "README.md",
+    line: 2,
+  });
   const message = `Running evaluation on ${headBranchName}`;
   core.setOutput("message", message);
 } catch (error) {
