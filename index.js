@@ -46,7 +46,7 @@ try {
     ...github.context.repo,
     pull_number: prNumber,
     body: "Some comment",
-    commit_id: github.context.sha,
+    commit_id: payload.pull_request.head.sha,
     path: "README.md",
     line: 2,
   });
