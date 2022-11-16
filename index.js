@@ -15,7 +15,7 @@ try {
 
   core.error(new Error("message"), {
     title: "A title",
-    file: "root/README.md",
+    file: "README.md",
     startColumn: 1,
     endColumn: 2,
     startLine: 1,
