@@ -13,14 +13,14 @@ try {
   const headBranchName = payload.pull_request.head.ref;
   console.log(`Got PR to merge from ${headBranchName} -> ${baseBranchName}`);
 
-  core.error(new Error("message"), {
-    title: "A title",
-    file: "README.md",
-    startColumn: 1,
-    endColumn: 2,
-    startLine: 1,
-    endLine: 2,
-  });
+  // core.error(new Error("message"), {
+  //   title: "A title",
+  //   file: "README.md",
+  //   startColumn: 1,
+  //   endColumn: 2,
+  //   startLine: 1,
+  //   endLine: 2,
+  // });
 
   // check if PR title is provided
   if (prTitle === null) {
