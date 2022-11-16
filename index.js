@@ -18,8 +18,8 @@ try {
     file: "root/README.md",
     startColumn: 1,
     endColumn: 2,
-    startLine: 2,
-    endLine: 3,
+    startLine: 1,
+    endLine: 2,
   });
   // check if PR title is provided
   if (prTitle === null) {
