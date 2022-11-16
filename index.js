@@ -42,7 +42,7 @@ try {
       ...github.context.repo,
       pull_number: prNumber,
       body: "Some comment",
-      commit_id: github.sha,
+      commit_id: github.context.sha,
       path: "README.md",
       line: 2,
     });
