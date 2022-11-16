@@ -12,6 +12,15 @@ try {
   const baseBranchName = payload.pull_request.base.ref;
   const headBranchName = payload.pull_request.head.ref;
   console.log(`Got PR to merge from ${headBranchName} -> ${baseBranchName}`);
+
+  core.error(new Error("message"), {
+    title: "A title",
+    file: "root/README.md",
+    startColumn: 1,
+    endColumn: 2,
+    startLine: 2,
+    endLine: 3,
+  });
   // check if PR title is provided
   if (prTitle === null) {
     octokit.rest.issues.createComment({
