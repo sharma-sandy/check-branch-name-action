@@ -3,7 +3,7 @@ const github = require("@actions/github");
 
 try {
   const payload = github.context.payload;
-  console.log(payload);
+  //console.log(payload);
   const prNumber = payload.pull_request.number;
   const prBody = payload.pull_request.body;
   const prTitle = payload.pull_request.title;
