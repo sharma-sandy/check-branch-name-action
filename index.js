@@ -21,6 +21,7 @@ try {
     startLine: 1,
     endLine: 2,
   });
+
   // check if PR title is provided
   if (prTitle === null) {
     octokit.rest.issues.createComment({
@@ -36,6 +37,14 @@ try {
       ...github.context.repo,
       issue_number: prNumber,
       body: "PR Description is missing",
+    });
+    octokit.rest.pulls.createReviewComment({
+      ...github.context.repo,
+      pull_number: prNumber,
+      body: "Some comment",
+      commit_id: github.sha,
+      path: "README.md",
+      line: 2,
     });
     core.setFailed("PR Description is not provided");
   }
